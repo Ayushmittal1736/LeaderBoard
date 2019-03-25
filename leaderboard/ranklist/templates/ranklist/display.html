@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+	table {
+		width: 80%;
+	}
+	tr {
+		width: 50%;
+	}
+	th {
+		font-weight: bold;
+	}
+	th, td {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		text-align: center;
+		width: 
+	}
+	table, th, td{
+		border: 1px solid black;
+	}
+
+	.hen {
+		padding-top: 100px;
+		padding-left: 15%;
+	}
+</style>
+
+{% if top_ten_teams %}
+<div class="hen">
+	<table>
+		<tr><th>Player 1</th><th>Player 2</th><th>Score</th></tr>
+	    {% for team in top_ten_teams %}
+		    <tr>
+		    	<td>{{ team.player_1 }} </td><td> {{ team.player_2 }}</td><td> {{ team.score }} </td>
+			</tr>
+	    {% endfor %}
+	</table>
+
+	{% else %}
+	    <h3>You don't have any teams.</h3>
+</div>
+{% endif %}
